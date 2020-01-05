@@ -1,0 +1,24 @@
+-#左側の箱
+.side_bar
+  -#ヘッダー
+  .side_header
+    -#ボックス
+    .side_header__box
+      %p.side_header__box__name
+        masa
+      %ul.side_header__box__items
+        %li.side_header__box__item--edit-user
+          = link_to "#" do
+            =icon('fas', 'edit my-white fa-spin')
+        %li.side_header__box__item--new-group
+          = link_to "#" do
+            =icon('fas', 'cog my-white fa-spin')
+  -#メイン
+  .groups
+    = link_to "#", class:"group_list" do
+      %p.group_list__name
+        techchamp
+      %p.group_list__message
+        まだメッセージがありません。
+
+
