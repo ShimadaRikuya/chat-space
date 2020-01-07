@@ -8,17 +8,18 @@
         = current_user.name
       %ul.side_header__box__items
         %li.side_header__box__item--edit-user
-          = link_to "#" do
+          = link_to new_group_path do
             =icon('fas', 'edit my-white')
         %li.side_header__box__item--new-group
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
   -#メイン
   .groups
-    = link_to "#", class:"group_list" do
-      %p.group_list__name
-        techchamp
-      %p.group_list__message
-        まだメッセージがありません。
+    - current_user.groups.each do |group|
+      = link_to "#", class:"group_list" do
+        %p.group_list__name
+          = group.name
+        %p.group_list__message
+          まだメッセージがありません。
 
 
