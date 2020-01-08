@@ -122,28 +122,30 @@
       }
     }
   }
-  .message_form {
+  .form {
     height: 90px;
     padding: 20px 40px;
     background-color: #d2d2d2;
     .new_message {
       display: flex;
+      &__text {
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+      }
       .message_box {
         position: relative;
-        width: 100%;
-        &__text {
-          height: 50px;
+        display: flex;
+        &__image {
           width: 100%;
-          padding: 0 40px 0 10px;
-          color: #434A54;
-        }
-        &__imag {
           font-size: 1.3rem;
           position: absolute;
           top: 10px;
-          right: 10px;
-          &__file {
-            display: none;
+          right: 30px;
+          .hidden {
+          visibility: hidden;
           }
         }
       }
