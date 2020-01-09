@@ -4,22 +4,15 @@
   .main_header
     .main_header__left_box
       %h2.main_header__left_box__list_name
-        test
+        = @group.name
       %h2.main_header__left_box__members
-        member : masa
+        member : 
+        = @group.show_last_message
     .group
-      = link_to "Edit", "#", class:"main_header__edit_btn"
+      = link_to "Edit", edit_group_path(@group), class:"main_header__edit_btn"
 
-  -#メイン
-  .main_forms
-    .main_forms__message
-      .main_forms__message__box
-        %p.main_forms__message__box__name
-          masa
-        %p.main_forms__message__box__date
-          2019/11/29(Wed)17:43:01
-      .main_forms__message__text
-        おはよう！
+  .messages
+    = render @messages
 
   -#フォーム
   .form
@@ -30,4 +23,5 @@
           = icon('fas', 'image', class: 'icon') 
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'submit_btn'
+
 

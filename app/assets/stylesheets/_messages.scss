@@ -98,16 +98,17 @@
       right: 40px;
     }
   }
-  .main_forms {
+  .messages {
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 35px 40px;
-    &__message {
+    overflow: scroll;
+    .upper-message {
       padding-bottom: 46px;
       &__box {
         display: flex;
         margin-bottom: 12px;
-        &__name {
+        &__user_name {
           color: #333333;
           font-size: 16px;
         }
@@ -116,9 +117,11 @@
         font-size: 12px;
         }
       }
-      &__text {
-        font-size: 14px;
-        color: #434A54;
+      .lower-message {
+        &__content {
+          font-size: 14px;
+          color: #434A54;
+        }
       }
     }
   }
