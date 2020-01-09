@@ -4,30 +4,24 @@
   .main_header
     .main_header__left_box
       %h2.main_header__left_box__list_name
-        test
+        = @group.name
       %h2.main_header__left_box__members
-        member : masa
+        member : 
+        = @group.show_last_message
     .group
-      = link_to "Edit", "#", class:"main_header__edit_btn"
+      = link_to "Edit", edit_group_path(@group), class:"main_header__edit_btn"
 
-  -#メイン
-  .main_forms
-    .main_forms__message
-      .main_forms__message__box
-        %p.main_forms__message__box__name
-          masa
-        %p.main_forms__message__box__date
-          2019/11/29(Wed)17:43:01
-      .main_forms__message__text
-        おはよう！
+  .messages
+    = render @messages
 
   -#フォーム
-  .message_form
-    %form.new_message
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'new_message__text', placeholder: 'type a message'
       .message_box
-        %input{type: "text", class: "message_box__text", placeholder: "type a message"}
-        %label{class: "message_box__imag"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "message_box__imag__file"}
-      %input{type: "submit", class: "submit_btn"}
+        = f.label :image, class: 'message_box__image' do
+          = icon('fas', 'image', class: 'icon') 
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'submit_btn'
+
 
