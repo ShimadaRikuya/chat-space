@@ -57,9 +57,8 @@ $(function(){
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $('form')[0].reset();
     })
-    .fail(function(){
-      alert('error');
-    });
-    $('button').prop('disabled', true);
+    .always(function(){
+      $('button').prop('disabled', false);
+    })
   });
 });
