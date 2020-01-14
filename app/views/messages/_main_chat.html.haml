@@ -7,7 +7,9 @@
         = @group.name
       %h2.main_header__left_box__members
         member : 
-        = @group.show_last_message
+        - @group.users.each do |user|
+          %li.member
+            =user.name
     .group
       = link_to "Edit", edit_group_path(@group), class:"main_header__edit_btn"
 
