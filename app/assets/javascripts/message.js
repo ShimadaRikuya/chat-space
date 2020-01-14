@@ -60,6 +60,6 @@ $(function(){
     .fail(function(){
       alert('error');
     });
-    return false;
+    $('button').prop('disabled', true);
   });
 });
