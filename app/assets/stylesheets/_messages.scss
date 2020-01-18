@@ -20,7 +20,6 @@
     align-items: center;
     &__box {
       height: 20px;
-      background-color: #333333;
       width: 260px;
       margin: 0 20px;
       display : flex;
@@ -84,6 +83,9 @@
         display: flex;
         color: #999999;
         font-size: 12px;
+        &__li {
+          
+        }
       }
     }
     &__edit_btn {
